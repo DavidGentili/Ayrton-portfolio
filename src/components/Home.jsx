@@ -21,9 +21,9 @@ const Home = () => {
           ¡Hablemos!
         </button>
       </div>
-      <div className="flex w-[370px] mb-10 ">
+      <div className="flex w-[370px] mb-10 rounded-md ">
         
-        <video src={video1} autoPlay loop controls  className="rounded-sm"/>
+        <video src={video1} controls autoPlay loop playsInline muted className="rounded-md"/>
       </div>
     </div>
   );

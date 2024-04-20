@@ -8,7 +8,7 @@ const nextConfig = {
 
 export default nextConfig;
 
-export const webpack = (config, { isServer }) => {
+export const webpack = (config) => {
   config.module.rules.push({
     test: /\.(png|jpe?g|gif|mp4)$/i,
     use: [

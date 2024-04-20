@@ -1,5 +1,5 @@
 import React from "react";
-
+import video1 from "../../public/videos/video1.mp4";
 const Home = () => {
   return (
     <div id="home" className="h-full flex mb-10">
@@ -17,10 +17,13 @@ const Home = () => {
           Cerati, Queen, Jeff Buckley, entre otros.
         </p>
 
-        <button className="bg-[#93B962] w-[389px] h-[76px] my-10 text-black rounded-md text-4xl">¡Hablemos!</button>
+        <button className="bg-[#93B962] w-[389px] h-[76px] my-10 text-black rounded-md text-4xl">
+          ¡Hablemos!
+        </button>
       </div>
-      <div className="flex w-2/5 mb-10">Video
-      
+      <div className="flex w-[370px] mb-10 ">
+        
+        <video src={video1} autoPlay loop controls  className="rounded-sm"/>
       </div>
     </div>
   );

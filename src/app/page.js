@@ -1,6 +1,6 @@
-import Home from "@/components/Home";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
+import Home from "@/app/pages/Home";
+import About from "@/app/pages/About";
+import Contact from "@/app/pages/Contact";
 
 
 

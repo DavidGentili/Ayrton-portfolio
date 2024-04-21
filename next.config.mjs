@@ -24,3 +24,4 @@ export const webpack = (config) => {
 
   return config;
 };
+

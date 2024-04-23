@@ -1,6 +1,5 @@
 import Home from "@/app/pages/Home";
 import About from "@/app/pages/About";
-import Contact from "@/app/pages/Contact";
 import Gallery from "./pages/Gallery";
 
 
@@ -12,7 +11,7 @@ export default function Page() {
       <Home/>
       <About/>
       <Gallery/>
-      <Contact/>
+      
      
     </main>
   );

@@ -6,7 +6,7 @@ const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
 
 const AudioCard = ({ audio, title, description, image, alt }) => {
   return (
-    <div className="w-72 h-full border-[#eca336] border-2 p-6 text-[#eca336] rounded-2xl">
+    <div className="md:w-72 h-full border-[#eca336] border-2 p-6 text-[#eca336] rounded-2xl">
        <div className=" w-300 h-96 flex items-center"> <Image
         src={image}
         alt={alt}

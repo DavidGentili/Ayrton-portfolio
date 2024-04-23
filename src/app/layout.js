@@ -1,6 +1,7 @@
 import { Antonio } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Contact from "./pages/Contact";
 
 const inter = Antonio({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}style={{ overflowX: "hidden" }}>
         <NavBar/>
         {children}
+        <Contact/>
         </body>
     </html>
   );

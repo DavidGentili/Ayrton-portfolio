@@ -15,7 +15,7 @@ const About = () => {
           <div className={anton.className}>SOBRE MI</div>
         </div>
         {/* --contenido */}
-        <div className=" grid grid-cols-2 grid-rows-2  justify-center  mt-10">
+        <div className=" grid grid-cols-2   justify-center  mt-10 ">
           <div>
             <Image src={photo1} alt="photo1" className="rounded-2xl" />
           </div>

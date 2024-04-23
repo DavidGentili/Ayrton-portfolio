@@ -1,5 +1,6 @@
 import React from "react";
 import video1 from "../../../public/videos/video1.mp4";
+import Link from "next/link";
 const Home = () => {
   return (
   <div>
@@ -18,10 +19,10 @@ const Home = () => {
           inspiraron musicos y bandas como Eddie Vedder, Elvis Presley, Gustavo
           Cerati, Queen, Jeff Buckley, entre otros.
         </p>
-
+<Link href='/#contact'>
         <button className="bg-[#93B962]  w-[389px]  h-[76px] my-10 text-black rounded-md  text-4xl">
           ¡Hablemos!
-        </button>
+        </button></Link>
       </div>
       <div className="flex w-[370px]">
         <div className="rounded-md overflow-hidden">

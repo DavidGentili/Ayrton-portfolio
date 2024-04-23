@@ -1,0 +1,32 @@
+{
+  "videos":[
+    {
+      "id": 1,
+      "title": "TITULO CANCION 1",
+      "source": "/videos/gallery1.mp4",
+      "description": "Descripción del video 1"
+    },
+    {
+      "id": 2,
+      "title": "TITULO CANCION 2 ",
+      "source": "/videos/gallery2.mp4",
+      "description": "Descripción del video 2"
+    }
+  ],
+  "audios":[
+    {
+      "id": 1,
+      "title": "Daniel Caesar - Best Part",
+      "image":"/assets/imgAudio1.jpg",
+      "source": "/audios/audio1.mp4",
+      "description": "Version piano by Ayrton Sosa."
+    },
+    {
+      "id": 2,
+      "title": "Usted Señanemelo - Agua Marfil",
+      "image":"/assets/imgAudio2.jpg",
+      "source": "/audios/audio2.mp4",
+      "description": "A 3 voces, armonizada por Micael, Caleb Montenegro y Ayrton Sosa"
+    }
+  ]
+}

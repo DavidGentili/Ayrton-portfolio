@@ -51,7 +51,7 @@ const About = () => {
       </div>
       {/* mobile design */}
       <div id="about" className=" md:hidden h-full flex flex-col">
-        <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-5 ">
+        <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-3 ">
           <div className={anton.className}>SOBRE MI</div>
         </div>
         {/* --contenido */}

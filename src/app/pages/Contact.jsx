@@ -33,9 +33,22 @@ const Contact = () => {
         </div>
 
         {/* mobile design */}
-        <div className="md:hidden flex">
-          <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-5 ">
-            <div className={anton.className}>CONTACTO</div>
+        <div className="md:hidden flex flex-col h-full">
+          <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-3 ">
+            <div className={anton.className}>¡HABLEMOS!</div>
+          </div>
+          <div className="flex flex-col my-4   w-full text-base ">
+            <div className="flex items-center gap-2 mb-3">
+              <GoMail />
+              Ayrtonivansosa@gmail.com
+            </div>
+            <Link
+              href={"https://www.instagram.com/sosa.ayrton/"}
+              className="flex items-center gap-2"
+            >
+              <FaInstagram />
+              Instagram
+            </Link>
           </div>
         </div>
       </div>

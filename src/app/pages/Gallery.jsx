@@ -47,7 +47,7 @@ const Gallery = () => {
         <div className="flex flex-row gap-4 justify-center">
 
 
-        <Carousel slide={false} className="w-full">
+        <Carousel interval={null} className="w-full">
             {tripleCardVideos.map((triple) => (
               <Carousel.Item key={triple.id}>
                 <div className="flex justify-center">
@@ -74,7 +74,7 @@ const Gallery = () => {
         <div className={`${anton.className} text-2xl m-4 `}>AUDIOS:</div>
         <div className="flex flex-row gap-4 mt-4 justify-center h-full">
         
-        <Carousel slide={false} className="w-full "> 
+        <Carousel interval={null} className="w-full "> 
     {tripleCardAudios.map((tripleCard) => (
       <Carousel.Item key={tripleCard.id}>
         <div className="flex justify-center">
@@ -97,12 +97,12 @@ const Gallery = () => {
       </div>
       {/* mobile design */}
       <div className="md:hidden flex flex-col text-[#eca336] ">
-        <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-5 ">
+        <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-3 ">
           <div className={anton.className}>GALERIA</div>
         </div>
         <div className={`${anton.className} text-xl m-4 `}>VIDEOS:</div>
         <div className="flex flex-row gap-4 justify-center">
-          <Carousel slide={false}>
+          <Carousel interval={null}>
             
                {dataVideos.map((video) => (
             <Carousel.Item key={video.id} >
@@ -120,7 +120,7 @@ const Gallery = () => {
         {/* map Audios */}
         <div className={`${anton.className} text-xl m-4 `}>AUDIOS:</div>
         <div className="flex flex-row gap-4 mt-4 justify-center">
-          <Carousel slide={false}>
+          <Carousel interval={null}>
 
             {dataAudios.map((audio) => (
             <Carousel.Item key={audio.id}>

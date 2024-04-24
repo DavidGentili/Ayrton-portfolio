@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Anton } from "next/font/google";
 import VideoCard from "@/components/VideoCard";
 import AudioCard from "@/components/AudioCard";
+import Carousel from 'react-bootstrap/Carousel';
+
 
 const anton = Anton({weight: ["400"], style: ["normal"], subsets: ["latin"] });
 
@@ -24,6 +26,14 @@ const Gallery = () => {
 
     fetchGalleryData();
   }, []);
+  const tripleCardVideos = []; 
+  for (let i = 0; i < dataVideos.length; i += 3) {
+    tripleCardVideos.push(dataVideos.slice(i, i + 3));
+  }
+  const tripleCardAudios = []; 
+  for (let i = 0; i < dataAudios.length; i += 3) {
+    tripleCardAudios.push(dataAudios.slice(i, i + 3));
+  }
 
   return (
     <div id="gallery" className="flex h-full ">
@@ -35,21 +45,41 @@ const Gallery = () => {
         {/* map Videos */}
         <div className={`${anton.className} text-2xl m-4 `}>VIDEOS:</div>
         <div className="flex flex-row gap-4 justify-center">
-          {dataVideos.map((video) => (
-            <div key={video.id}>
-              <VideoCard
-                video={video.source}
-                title={video.title}
-                description={video.description}
-              />
-            </div>
-          ))}
+
+
+        <Carousel slide={false} className="w-full">
+            {tripleCardVideos.map((triple) => (
+              <Carousel.Item key={triple.id}>
+                <div className="flex justify-center">
+                  {triple.map((video) => (
+                    <div key={video.id} className="mx-4">
+                      <VideoCard
+                        video={video.source}
+                        title={video.title}
+                        description={video.description}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+
+
+
+
+          
         </div>
         {/* map Audios */}
         <div className={`${anton.className} text-2xl m-4 `}>AUDIOS:</div>
-        <div className="flex flex-row gap-4 mt-4 justify-center">
-          {dataAudios.map((audio) => (
-            <div key={audio.id}>
+        <div className="flex flex-row gap-4 mt-4 justify-center h-full">
+        
+        <Carousel slide={false} className="w-full "> 
+    {tripleCardAudios.map((tripleCard) => (
+      <Carousel.Item key={tripleCard.id}>
+        <div className="flex justify-center">
+          {tripleCard.map((audio) => (
+            <div key={audio.id}  className="mx-4">
               <AudioCard
                 audio={audio.source}
                 title={audio.title}
@@ -59,6 +89,10 @@ const Gallery = () => {
               />
             </div>
           ))}
+        </div>
+      </Carousel.Item>
+    ))}
+  </Carousel>
         </div>
       </div>
       {/* mobile design */}
@@ -68,21 +102,28 @@ const Gallery = () => {
         </div>
         <div className={`${anton.className} text-xl m-4 `}>VIDEOS:</div>
         <div className="flex flex-row gap-4 justify-center">
-          {dataVideos.map((video) => (
-            <div key={video.id}>
+          <Carousel slide={false}>
+            
+               {dataVideos.map((video) => (
+            <Carousel.Item key={video.id} >
               <VideoCard
                 video={video.source}
                 title={video.title}
                 description={video.description}
               />
-            </div>
+            </Carousel.Item>
           ))}
+            
+          </Carousel>
+         
         </div>
         {/* map Audios */}
         <div className={`${anton.className} text-xl m-4 `}>AUDIOS:</div>
         <div className="flex flex-row gap-4 mt-4 justify-center">
-          {dataAudios.map((audio) => (
-            <div key={audio.id}>
+          <Carousel slide={false}>
+
+            {dataAudios.map((audio) => (
+            <Carousel.Item key={audio.id}>
               <AudioCard
                 audio={audio.source}
                 title={audio.title}
@@ -90,8 +131,10 @@ const Gallery = () => {
                 image={audio.image}
                 alt={audio.id}
               />
-            </div>
+            </Carousel.Item>
           ))}
+          </Carousel>
+          
         </div>
 
       </div>

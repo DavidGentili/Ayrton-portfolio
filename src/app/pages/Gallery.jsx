@@ -11,6 +11,7 @@ const anton = Anton({weight: ["400"], style: ["normal"], subsets: ["latin"] });
 const Gallery = () => {
   const [dataVideos, setDataVideos] = useState([]);
   const [dataAudios, setDataAudios] = useState([]);
+  const [dataVideosLg, setDataVideosLg] = useState([]);
 
   useEffect(() => {
     const fetchGalleryData = async () => {
@@ -19,6 +20,7 @@ const Gallery = () => {
         const data = await res.json();
         setDataVideos(data.videos);
         setDataAudios(data.audios);
+        setDataVideosLg(data.videosLg)
       } catch (error) {
         console.error("Error fetching gallery data:", error);
       }
@@ -32,9 +34,8 @@ const Gallery = () => {
   }
   const tripleCardAudios = []; 
   for (let i = 0; i < dataAudios.length; i += 3) {
-    tripleCardAudios.push(dataAudios.slice(i, i + 3));
-  }
-
+    tripleCardAudios.push(dataAudios.slice(i, i + 3));}
+   
   return (
     <div id="gallery" className="flex h-full ">
       {/* web design */}
@@ -44,7 +45,7 @@ const Gallery = () => {
         </div>
         {/* map Videos */}
         <div className={`${anton.className} text-2xl m-4 `}>VIDEOS:</div>
-        <div className="flex flex-row gap-4 justify-center">
+        <div className="flex flex-col gap-4 justify-center">
 
 
         <Carousel interval={null} className="w-full">
@@ -54,6 +55,7 @@ const Gallery = () => {
                   {triple.map((video) => (
                     <div key={video.id} className="mx-4">
                       <VideoCard
+                      style="md:w-80 p-8"
                         video={video.source}
                         title={video.title}
                         description={video.description}
@@ -62,8 +64,22 @@ const Gallery = () => {
                   ))}
                 </div>
               </Carousel.Item>
+              
             ))}
           </Carousel>
+          <Carousel interval={null}>
+            
+            {dataVideosLg.map((video) => (
+         <Carousel.Item key={video.id} >
+           <VideoCard style="w-full flex flex-col justify-center items-center py-3"
+             video={video.source}
+             title={video.title}
+             description={video.description}
+           />
+         </Carousel.Item>
+       ))}
+         
+       </Carousel>
 
 
 
@@ -101,12 +117,13 @@ const Gallery = () => {
           <div className={anton.className}>GALERIA</div>
         </div>
         <div className={`${anton.className} text-xl m-4 `}>VIDEOS:</div>
-        <div className="flex flex-row gap-4 justify-center">
+        <div className="flex flex-col gap-4 justify-center">
           <Carousel interval={null}>
             
                {dataVideos.map((video) => (
             <Carousel.Item key={video.id} >
               <VideoCard
+              style='p-8'
                 video={video.source}
                 title={video.title}
                 description={video.description}
@@ -115,6 +132,19 @@ const Gallery = () => {
           ))}
             
           </Carousel>
+          <Carousel interval={null}>
+            
+            {dataVideosLg.map((video) => (
+         <Carousel.Item key={video.id} >
+           <VideoCard style="w-full flex flex-col justify-center items-center p-1"
+             video={video.source}
+             title={video.title}
+             description={video.description}
+           />
+         </Carousel.Item>
+       ))}
+         
+       </Carousel>
          
         </div>
         {/* map Audios */}

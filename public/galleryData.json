@@ -15,25 +15,36 @@
     {
       "id": 3,
       "title": "TITULO CANCION 1",
-      "source": "/videos/gallery1.mp4",
+      "source": "/videos/gallery3.mp4",
       "description": "Descripción del video 1"
     },
+   
     {
       "id": 4,
       "title": "TITULO CANCION 2 ",
-      "source": "/videos/gallery2.mp4",
+      "source": "/videos/gallery6.mp4",
+      "description": "Descripción del video 2"
+    }
+  ],
+  "videosLg":[
+  
+    {
+      "id": 1,
+      "title": "TITULO CANCION 2 ",
+      "source": "/videos/gallery4.mp4",
       "description": "Descripción del video 2"
     },
     {
-      "id": 5,
+      "id": 2,
       "title": "TITULO CANCION 1",
-      "source": "/videos/gallery1.mp4",
+      "source": "/videos/gallery5.mp4",
       "description": "Descripción del video 1"
     },
+   
     {
-      "id": 6,
+      "id": 3,
       "title": "TITULO CANCION 2 ",
-      "source": "/videos/gallery2.mp4",
+      "source": "/videos/gallery7.mp4",
       "description": "Descripción del video 2"
     }
   ],

@@ -44,8 +44,9 @@ const NavBar = () => {
    
   </div>
 ):(
-<div className="flex flex-col w-screen h-screen text-center gap-8">
+<div className="flex flex-col w-screen h-screen text-center">
   <div  onClick={handleClick} className="flex w-full justify-end"><GiCancel /></div>
+  <div className="text-2xl gap-8 mt-14 flex flex-col">
   <Link href='/#home' >
         <div>Inicio</div>
         </Link>
@@ -58,6 +59,7 @@ const NavBar = () => {
         <Link href='/#contact' >
        <div>Contacto</div> 
         </Link>
+        </div>
 </div>)}
 </div>
 

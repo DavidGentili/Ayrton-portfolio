@@ -52,12 +52,13 @@ const Home = () => {
           inspiraron musicos y bandas como Eddie Vedder, Elvis Presley, Gustavo
           Cerati, Queen, Jeff Buckley, entre otros.
         </text>
+<Link href='/#contact'>
 
         <button className="bg-[#93B962]  p-4   my-10 text-black rounded-md  text-xl">
           ¡Hablemos!
-        </button>
-      </div>
+        </button></Link>
       
+      </div>
     </div>
     </div>
   );

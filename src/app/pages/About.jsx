@@ -21,27 +21,18 @@ const About = () => {
           </div>
           <div className=" flex justify-center items-center">
             <text className=" w-[539px]  h-[466px] border-[#93B962] rounded-2xl border-2 p-8 text-[#93B962]  text-2xl">
-              Naci en 1999 Argentina, Buenos Aires, en la ciudad de Mar Del
-              Plata. A los 9 años, comencé con la musica cuando un amigo me
-              quiso enseñar a tocar la.guitarra, y desde alli, me enamore de
-              hacer musica, siempre fui aprendiendo por mi cuenta y por otras
-              personas, soy autodidacta, toque solo la guitarra hasta los 16
-              años, y luego, empeze a utilizar mi voz, solo de acompañamiento
-              para otros musicos, hasta que en 2019, tuve mi primera
-              presentacion en publico, de segunda voz, y guitarra principal, con
-              un amigo que me habia invitado a tocar.
+            Soy Argentino. 
+Nací en 1999, Buenos Aires/ Mar del Plata.
+Incursioné en el mundo musical a los 9 años cuando un amigo de la misma edad me enseñó los primeros acordes de guitarra. 
+Desde entonces no paré de aprender por mi cuenta y de cada persona que me regalaba un momento para enseñarme algo.
+A los 16 comencé a cantar, y en 2019, a los 20 años, tuve mi primera presentación en público, invitado por un amigo, como segunda voz y guitarra principal.
             </text>
           </div>
           <div className="flex justify-center items-start mt-20">
             <text className="w-[539px] h-[466px] border-[#93B962] rounded-2xl border-2 p-8 text-[#93B962] text-2xl">
-              Y la segunda presentacion el 8 de marzo de 2020, fue cuando me
-              presente como cantante principal, desde alli comence a presentarme
-              como cantante solista en varios eventos, shows, conciertos, donde
-              pude desenvolverme cada dia mas, haciendo musica que es lo que
-              tanto amo, y al publico que me ha apoyado en esto. Actualmente me
-              mude a España, a seguir con este proyecto musical, y estare
-              tocando en varias partes de Mallorca, y poco a poco, ire tocando
-              en distintas partes de España y mas adelante del continente.
+            El 8 de Marzo del 2020 fue mi primer presentación como artista principal.
+Desde ese momento me presenté como solista en eventos, shows, conciertos, donde pude desenvolverme cada día mas haciendo lo que amo. 
+Actualmente me mudé a España. Toqué en varios lugares de Mallorca y pronto estaré tocando en diferentes partes del el continente.
             </text>
           </div>
           <div className="mt-8">
@@ -61,15 +52,11 @@ const About = () => {
           </div>
           <div className=" flex justify-center ">
             <text className="  border-[#93B962] rounded-2xl border-2 p-4 text-[#93B962]  text-base">
-              Naci en 1999 Argentina, Buenos Aires, en la ciudad de Mar Del
-              Plata. A los 9 años, comencé con la musica cuando un amigo me
-              quiso enseñar a tocar la.guitarra, y desde alli, me enamore de
-              hacer musica, siempre fui aprendiendo por mi cuenta y por otras
-              personas, soy autodidacta, toque solo la guitarra hasta los 16
-              años, y luego, empeze a utilizar mi voz, solo de acompañamiento
-              para otros musicos, hasta que en 2019, tuve mi primera
-              presentacion en publico, de segunda voz, y guitarra principal, con
-              un amigo que me habia invitado a tocar.
+            Soy Argentino. 
+Nací en 1999, Buenos Aires/ Mar del Plata.
+Incursioné en el mundo musical a los 9 años cuando un amigo de la misma edad me enseñó los primeros acordes de guitarra. 
+Desde entonces no paré de aprender por mi cuenta y de cada persona que me regalaba un momento para enseñarme algo.
+A los 16 comencé a cantar, y en 2019, a los 20 años, tuve mi primera presentación en público, invitado por un amigo, como segunda voz y guitarra principal.
             </text>
           </div>
           <div >
@@ -77,14 +64,9 @@ const About = () => {
           </div>
           <div className="flex justify-center  ">
           <text className="  border-[#93B962] rounded-2xl border-2 p-4 text-[#93B962]  text-base">
-              Y la segunda presentacion el 8 de marzo de 2020, fue cuando me
-              presente como cantante principal, desde alli comence a presentarme
-              como cantante solista en varios eventos, shows, conciertos, donde
-              pude desenvolverme cada dia mas, haciendo musica que es lo que
-              tanto amo, y al publico que me ha apoyado en esto. Actualmente me
-              mude a España, a seguir con este proyecto musical, y estare
-              tocando en varias partes de Mallorca, y poco a poco, ire tocando
-              en distintas partes de España y mas adelante del continente.
+          El 8 de Marzo del 2020 fue mi primer presentación como artista principal.
+Desde ese momento me presenté como solista en eventos, shows, conciertos, donde pude desenvolverme cada día mas haciendo lo que amo. 
+Actualmente me mudé a España. Toqué en varios lugares de Mallorca y pronto estaré tocando en diferentes partes del el continente.
             </text>
           </div>
         </div>

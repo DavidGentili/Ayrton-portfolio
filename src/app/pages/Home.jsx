@@ -12,12 +12,12 @@ const Home = () => {
           <h3>MÚSICO</h3>
         </div>
         <p className=" w-[568px]  h-[375px]  text-[31px] mb-10">
-          Mi nombre es Ayrton Sosa, soy musico (cantante y guitarrista), nacido
-          en Argentina, Buenos Aires, Mar del Plata. Toco varios generos
-          musicales, entre alguno de ellos, rock clasico, inde, progresivo,
-          folk, blues, boleros, baladas, pop, ya sea en ingles o español. Me
-          inspiraron musicos y bandas como Eddie Vedder, Elvis Presley, Gustavo
-          Cerati, Queen, Jeff Buckley, entre otros.
+        Saludos y Bienvenidos!
+Soy Ayrton, un artista (cantante/ guitarrista) apasionado por la música. 
+En esta web encontrarán algunos de mis trabajos, y conocerán un poco más de mi trayectoria. 
+Toco varios generos musicales.
+Me inspiraron artistas como Eddie Vedder, Elvis Presley, Gustavo Cerati, Queen, Jeff Buckley, entre otros.
+Los invito a explorar mi colección de música y ver vídeos de actuaciones en vivo.
         </p>
 <Link href='/#contact'>
         <button className="bg-[#93B962]  w-[389px]  h-[76px] my-10 text-black rounded-md  text-4xl">
@@ -45,12 +45,12 @@ const Home = () => {
         </div>
       </div>
         <text className=" w-full  text-xl my-10 ">
-          Mi nombre es Ayrton Sosa, soy musico (cantante y guitarrista), nacido
-          en Argentina, Buenos Aires, Mar del Plata. Toco varios generos
-          musicales, entre alguno de ellos, rock clasico, inde, progresivo,
-          folk, blues, boleros, baladas, pop, ya sea en ingles o español. Me
-          inspiraron musicos y bandas como Eddie Vedder, Elvis Presley, Gustavo
-          Cerati, Queen, Jeff Buckley, entre otros.
+        Saludos y Bienvenidos!
+Soy Ayrton, un artista (cantante/ guitarrista) apasionado por la música. 
+En esta web encontrarán algunos de mis trabajos, y conocerán un poco más de mi trayectoria. 
+Toco varios generos musicales.
+Me inspiraron artistas como Eddie Vedder, Elvis Presley, Gustavo Cerati, Queen, Jeff Buckley, entre otros.
+Los invito a explorar mi colección de música y ver vídeos de actuaciones en vivo.
         </text>
 <Link href='/#contact'>
 

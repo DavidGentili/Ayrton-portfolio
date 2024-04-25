@@ -2,50 +2,50 @@
   "videos":[
     {
       "id": 1,
-      "title": "TITULO CANCION 1",
+      "title": "Loco en el desierto - Conociendo Rusia",
       "source": "/videos/gallery1.mp4",
-      "description": "Descripción del video 1"
+      "description": "Tocando en un atardecer hermoso en Punta de El Toro, Mallorca"
     },
     {
       "id": 2,
-      "title": "TITULO CANCION 2 ",
+      "title": "Wicked Game - Chris Isaak",
       "source": "/videos/gallery2.mp4",
-      "description": "Descripción del video 2"
+      "description": "Primera banda formada en 2022, Mar del plata, Argentina."
     },
     {
       "id": 3,
-      "title": "TITULO CANCION 1",
+      "title": "Best Part- Daniel Caesar",
       "source": "/videos/gallery3.mp4",
-      "description": "Descripción del video 1"
+      "description": "En mis clases de piano, aprendiendo una nueva cancion y jugando con la improvisación vocal. Instituto de música, Mallorca."
     },
    
     {
       "id": 4,
-      "title": "TITULO CANCION 2 ",
+      "title": "Flaca - Andres calamaro",
       "source": "/videos/gallery6.mp4",
-      "description": "Descripción del video 2"
+      "description": "Tocando en la Jam de AGUA BAR en Palma de Mallorca."
     }
   ],
   "videosLg":[
   
     {
       "id": 1,
-      "title": "TITULO CANCION 2 ",
+      "title": "Hit the road Jack - Ray Charles",
       "source": "/videos/gallery4.mp4",
-      "description": "Descripción del video 2"
+      "description": "Tocando en Verano 2023, Junto con mi gran amiga Sara, Hotel en El Arenal, Mallorca."
     },
     {
       "id": 2,
-      "title": "TITULO CANCION 1",
+      "title": "Te para tres - Gustavo Cerati",
       "source": "/videos/gallery5.mp4",
-      "description": "Descripción del video 1"
+      "description": "Tocando en Hotel de El Arenal, Palma de Mallorca"
     },
    
     {
       "id": 3,
-      "title": "TITULO CANCION 2 ",
+      "title": "Ain't no sunshine - Bill Withers",
       "source": "/videos/gallery7.mp4",
-      "description": "Descripción del video 2"
+      "description": "Tocando en jam de AGUA BAR, Palma de mallorca"
     }
   ],
   "audios":[

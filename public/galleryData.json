@@ -24,30 +24,28 @@
       "title": "Flaca - Andres calamaro",
       "source": "/videos/gallery6.mp4",
       "description": "Tocando en la Jam de AGUA BAR en Palma de Mallorca."
-    }
-  ],
-  "videosLg":[
-  
+    },
     {
-      "id": 1,
+      "id": 5,
       "title": "Hit the road Jack - Ray Charles",
       "source": "/videos/gallery4.mp4",
       "description": "Tocando en Verano 2023, Junto con mi gran amiga Sara, Hotel en El Arenal, Mallorca."
     },
     {
-      "id": 2,
+      "id": 6,
       "title": "Te para tres - Gustavo Cerati",
       "source": "/videos/gallery5.mp4",
       "description": "Tocando en Hotel de El Arenal, Palma de Mallorca"
     },
    
     {
-      "id": 3,
+      "id": 7,
       "title": "Ain't no sunshine - Bill Withers",
       "source": "/videos/gallery7.mp4",
       "description": "Tocando en jam de AGUA BAR, Palma de mallorca"
     }
   ],
+  
   "audios":[
     {
       "id": 1,

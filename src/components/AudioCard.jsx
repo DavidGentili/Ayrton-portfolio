@@ -1,28 +1,34 @@
-import React from "react";
-import { Anton } from "next/font/google";
+"use client";
 import Image from "next/image";
+import { BsArrowUpRightSquareFill } from "react-icons/bs";
 
-const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
-
-const AudioCard = ({ audio, title, description, image, alt }) => {
+const AudioCard = ({ title, image, alt, onClick }) => {
   return (
-    <div className="md:w-72 h-full border-[#eca336] border-2 px-6 text-[#eca336] rounded-2xl">
-       <div className=" w-300 h-96 flex items-center"> <Image
+    <div
+      className={` text-[#eca336] rounded-2xl relative flex md:h-[200px] md:w-[200px] h-36 w-36`}
+    >
+      <Image
         src={image}
         alt={alt}
-       width={300}
-       height={300}
-       className="rounded-2xl "
-        />
+        width={300}
+        height={300}
+        className="w-full  object-cover rounded-2xl "
+      />
 
-      </div>
-     <div>   <audio controls className="flex w-full   ">
-          <source src={audio} type="audio/mpeg"  />
-        </audio>
-      </div>
-      <div className="mt-4 grid gap-3 mb-8">
-        <h1 className={`${anton.className} text-2xl  `}>{title}</h1>
-        <text>{description}</text>
+      <div
+        className="  font-thin text-sm
+         md:text-base md:w-full text-white absolute bottom-2 left-2"
+      >
+        <div className="flex w-full  p-2">
+          <div className="md:w-full md:flex md:justify-start">{title}</div>
+          <div className="flex w-2/5 justify-end  md:p-4">
+            <BsArrowUpRightSquareFill
+              className="text-[#eca336] "
+              size={25}
+              onClick={onClick}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

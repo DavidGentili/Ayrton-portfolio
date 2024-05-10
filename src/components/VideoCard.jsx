@@ -1,17 +1,30 @@
-import React from "react";
-import { Anton } from "next/font/google";
+import { BsArrowUpRightSquareFill } from "react-icons/bs";
 
-const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
-
-const VideoCard = ({ video, title, description,style }) => {
+const VideoCard = ({ video, title, onClick }) => {
   return (
-    <div className={`${style} h-full border-[#eca336] border-2   text-[#eca336] rounded-2xl`}>
-      <div >
-        <video src={video} controls autoPlay loop playsInline muted className="rounded-2xl"/>
-      </div>
-      <div className="mt-4 grid gap-3 mb-4">
-        <h1 className={`${anton.className} text-2xl `}>{title}</h1>
-        <text>{description}</text>
+    <div className="text-[#eca336] rounded-2xl relative flex md:h-[200px] md:w-[200px] h-36 w-36">
+      <video
+        src={video}
+        autoPlay
+        loop
+        playsInline
+        muted
+        className="w-full object-cover rounded-2xl"
+      />
+      <div
+        className="  font-thin text-sm
+         md:text-base md:w-full text-white absolute bottom-2 left-2"
+      >
+        <div className="flex w-full p-2">
+          <div className="md:w-full md:flex md:justify-start ">{title}</div>
+          <div className="flex w-2/5 justify-end  md:p-4 ">
+            <BsArrowUpRightSquareFill
+              className="text-[#eca336]"
+              size={25}
+              onClick={onClick}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

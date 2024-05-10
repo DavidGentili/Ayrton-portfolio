@@ -3,16 +3,28 @@ import React, { useEffect, useState } from "react";
 import { Anton } from "next/font/google";
 import VideoCard from "@/components/VideoCard";
 import AudioCard from "@/components/AudioCard";
-import Carousel from 'react-bootstrap/Carousel';
-
-
-const anton = Anton({weight: ["400"], style: ["normal"], subsets: ["latin"] });
+import { GiCancel } from "react-icons/gi";
+import Modal from "react-bootstrap/Modal";
+import Image from "next/image";
+const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
 
 const Gallery = () => {
   const [dataVideos, setDataVideos] = useState([]);
   const [dataAudios, setDataAudios] = useState([]);
-  const [dataVideosLg, setDataVideosLg] = useState([]);
-
+  const [show, setShow] = useState(false);
+  const [showA, setShowA] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedAudio, setSelectedAudio] = useState(null);
+  const handleClose = () => setShow(false);
+  const handleCloseA = () => setShowA(false);
+  const handleShowVideo = (video) => {
+    setSelectedVideo(video);
+    setShow(true);
+  };
+  const handleShowAudio = (audio) => {
+    setSelectedAudio(audio);
+    setShowA(true);
+  };
   useEffect(() => {
     const fetchGalleryData = async () => {
       try {
@@ -20,153 +32,125 @@ const Gallery = () => {
         const data = await res.json();
         setDataVideos(data.videos);
         setDataAudios(data.audios);
-        setDataVideosLg(data.videosLg)
       } catch (error) {
         console.error("Error fetching gallery data:", error);
       }
     };
 
     fetchGalleryData();
-  }, []);
-  const tripleCardVideos = []; 
-  for (let i = 0; i < dataVideos.length; i += 3) {
-    tripleCardVideos.push(dataVideos.slice(i, i + 3));
-  }
-  const tripleCardAudios = []; 
-  for (let i = 0; i < dataAudios.length; i += 3) {
-    tripleCardAudios.push(dataAudios.slice(i, i + 3));}
-   
+  }, [show]);
+
   return (
     <div id="gallery" className="flex h-full ">
-      {/* web design */}
-      <div className="hidden md:flex flex-col text-[#eca336]  w-full">
-        <div className="text-[#eca336] border-b-2 border-[#eca336]  w-96  text-6xl py-10 mb-10">
+      <div className="flex flex-col text-[#eca336]  w-full">
+        <div className="text-[#eca336] border-b-2 border-[#eca336]  md:w-96 text-3xl md:text-6xl md:py-10 md:mb-10 py-3">
           <div className={anton.className}>GALERIA</div>
         </div>
         {/* map Videos */}
-        <div className={`${anton.className} text-2xl m-4 `}>VIDEOS:</div>
-        <div className="flex flex-col gap-4 justify-center">
-
-
-        <Carousel interval={null} className="w-full">
-            {tripleCardVideos.map((triple) => (
-              <Carousel.Item key={triple.id}>
-                <div className="flex justify-center">
-                  {triple.map((video) => (
-                    <div key={video.id} className="mx-4">
-                      <VideoCard
-                      style="md:w-80 p-8"
-                        video={video.source}
-                        title={video.title}
-                        description={video.description}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </Carousel.Item>
-              
+        <div className="my-4 bg-[#eca336]  text-black w-full p-2 text-xs md:text-2xl rounded-lg">
+          Videos
+        </div>
+        <div className=" flex h-full w-full">
+          <div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
+            {dataVideos.map((video) => (
+              <div key={video.id}>
+                <VideoCard
+                  video={video.source}
+                  title={video.title}
+                  onClick={() => handleShowVideo(video)}
+                />
+              </div>
             ))}
-          </Carousel>
-          <Carousel interval={null}>
-            
-            {dataVideosLg.map((video) => (
-         <Carousel.Item key={video.id} >
-           <VideoCard style="w-full flex flex-col justify-center items-center py-3"
-             video={video.source}
-             title={video.title}
-             description={video.description}
-           />
-         </Carousel.Item>
-       ))}
-         
-       </Carousel>
-
-
-
-
-          
+          </div>
         </div>
+        {/* Modal video*/}
+        <Modal
+          show={show}
+          onHide={handleClose}
+          className=" text-white"
+          size="lg"
+        >
+          <Modal.Header className="w-full bg-black flex justify-end text-2xl">
+            <GiCancel onClick={handleClose} />
+          </Modal.Header>
+
+          <Modal.Body className=" bg-black md:w-full">
+            {selectedVideo && (
+              <div className="flex justify-center items-center w-full flex-col md:flex-row md:h-full px-4 md:gap-24 ">
+                <video
+                  src={selectedVideo.source}
+                  autoPlay
+                  controls
+                  loop
+                  playsInline
+                  muted
+                  className="w-full object-cover rounded-2xl md:relative md:flex md:h-[593px] md:w-[480px] "
+                />
+                <div className="mt-3 md:w-full md:flex  md:flex-col ">
+                  <p className="text-xl font-bold">{selectedVideo.title}</p>
+                  <p className="text-sm mt-3">{selectedVideo.description}</p>
+                </div>
+              </div>
+            )}
+          </Modal.Body>
+        </Modal>
+
         {/* map Audios */}
-        <div className={`${anton.className} text-2xl m-4 `}>AUDIOS:</div>
-        <div className="flex flex-row gap-4 mt-4 justify-center h-full">
-        
-        <Carousel interval={null} className="w-full "> 
-    {tripleCardAudios.map((tripleCard) => (
-      <Carousel.Item key={tripleCard.id}>
-        <div className="flex justify-center">
-          {tripleCard.map((audio) => (
-            <div key={audio.id}  className="mx-4">
-              <AudioCard
-                audio={audio.source}
-                title={audio.title}
-                description={audio.description}
-                image={audio.image}
-                alt={audio.id}
-              />
-            </div>
-          ))}
+        <div className="my-4 bg-[#eca336]  text-black w-full p-2 text-xs md:text-2xl rounded-lg">
+          Audios
         </div>
-      </Carousel.Item>
-    ))}
-  </Carousel>
-        </div>
-      </div>
-      {/* mobile design */}
-      <div className="md:hidden flex flex-col text-[#eca336] ">
-        <div className="text-[#eca336] border-b-2 border-[#eca336]    text-3xl py-3 ">
-          <div className={anton.className}>GALERIA</div>
-        </div>
-        <div className={`${anton.className} text-xl m-4 `}>VIDEOS:</div>
-        <div className="flex flex-col gap-4 justify-center">
-          <Carousel interval={null}>
-            
-               {dataVideos.map((video) => (
-            <Carousel.Item key={video.id} >
-              <VideoCard
-              style='p-8'
-                video={video.source}
-                title={video.title}
-                description={video.description}
-              />
-            </Carousel.Item>
-          ))}
-            
-          </Carousel>
-          <Carousel interval={null}>
-            
-            {dataVideosLg.map((video) => (
-         <Carousel.Item key={video.id} >
-           <VideoCard style="w-full flex flex-col justify-center items-center p-1"
-             video={video.source}
-             title={video.title}
-             description={video.description}
-           />
-         </Carousel.Item>
-       ))}
-         
-       </Carousel>
-         
-        </div>
-        {/* map Audios */}
-        <div className={`${anton.className} text-xl m-4 `}>AUDIOS:</div>
-        <div className="flex flex-row gap-4 mt-4 justify-center">
-          <Carousel interval={null}>
-
+        <div className=" flex h-full w-full">
+          <div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
             {dataAudios.map((audio) => (
-            <Carousel.Item key={audio.id}>
-              <AudioCard
-                audio={audio.source}
-                title={audio.title}
-                description={audio.description}
-                image={audio.image}
-                alt={audio.id}
-              />
-            </Carousel.Item>
-          ))}
-          </Carousel>
-          
+              <div key={audio.id}>
+                <AudioCard
+                  title={audio.title}
+                  image={audio.image}
+                  alt={audio.id}
+                  onClick={() => handleShowAudio(audio)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+        {/* Modal audio */}
+        <Modal
+          show={showA}
+          onHide={handleCloseA}
+          className="w-full text-white"
+          size="lg"
+        >
+          <Modal.Header className="w-full bg-black flex justify-end text-2xl">
+            <GiCancel onClick={handleCloseA} />
+          </Modal.Header>
 
+          <Modal.Body className=" bg-black ">
+            {selectedAudio && (
+              <div className="flex justify-center items-center w-full flex-col md:flex-row md:h-full px-4 md:gap-24 ">
+                <div className=" flex  h-[300px] w-[255px]  md:h-[400px] md:w-[400px]   ">
+                  <Image
+                    src={selectedAudio.image}
+                    alt={selectedAudio.id}
+                    width={300}
+                    height={300}
+                    className=" w-full  object-cover rounded-2xl  "
+                  />
+                </div>
+
+                <div className="mt-3 md:w-full md:flex  md:flex-col ">
+                  <div>
+                    {" "}
+                    <audio controls className="flex w-full my-2  ">
+                      <source src={selectedAudio.source} type="audio/mpeg" />
+                    </audio>
+                  </div>
+                  <p className="text-xl font-bold">{selectedAudio.title}</p>
+                  <p className="text-sm mt-3">{selectedAudio.description}</p>
+                </div>
+              </div>
+            )}
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );

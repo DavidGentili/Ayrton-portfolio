@@ -7,7 +7,7 @@ import Gallery from "./pages/Gallery";
 
 export default function Page() {
   return (
-    <main className="m-12">
+    <main className="md:m-12 m-6">
       <Home/>
       <About/>
       <Gallery/>

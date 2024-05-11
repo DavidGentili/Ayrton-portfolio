@@ -16,7 +16,7 @@ const Gallery = () => {
   const [showA, setShowA] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [selectedAudio, setSelectedAudio] = useState(null);
-  const [isLoading,setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const handleClose = () => setShow(false);
   const handleCloseA = () => setShowA(false);
   const handleShowVideo = (video) => {
@@ -54,19 +54,24 @@ const Gallery = () => {
           Videos
         </div>
         <div className=" flex h-full w-full">
-         
-           
-          {isLoading?<div> <Spinner animation='border' role='status'/></div>  
-          :<div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">{dataVideos.map((video) => (
-              <div key={video.id}>
-                <VideoCard
-                  video={video.source}
-                  title={video.title}
-                  onClick={() => handleShowVideo(video)}
-                />
-              </div>
-            ))}</div>}
-          
+          {isLoading ? (
+            <div>
+              {" "}
+              <Spinner animation="border" role="status" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
+              {dataVideos.map((video) => (
+                <div key={video.id}>
+                  <VideoCard
+                    video={video.source}
+                    title={video.title}
+                    onClick={() => handleShowVideo(video)}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         {/* Modal video*/}
         <Modal
@@ -79,7 +84,7 @@ const Gallery = () => {
             <GiCancel onClick={handleClose} />
           </Modal.Header>
 
-          <Modal.Body className="  modal-content" >
+          <Modal.Body className="  modal-content">
             {selectedVideo && (
               <div className="flex justify-center items-center w-full flex-col md:flex-row md:h-full px-4 md:gap-24 ">
                 <video
@@ -105,18 +110,25 @@ const Gallery = () => {
           Audios
         </div>
         <div className=" flex h-full w-full">
-         {isLoading? <div> <Spinner animation='border' role='status'/></div>:<div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
-            {dataAudios.map((audio) => (
-              <div key={audio.id}>
-                <AudioCard
-                  title={audio.title}
-                  image={audio.image}
-                  alt={audio.id}
-                  onClick={() => handleShowAudio(audio)}
-                />
-              </div>
-            ))}
-          </div>}
+          {isLoading ? (
+            <div>
+              {" "}
+              <Spinner animation="border" role="status" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
+              {dataAudios.map((audio) => (
+                <div key={audio.id}>
+                  <AudioCard
+                    title={audio.title}
+                    image={audio.image}
+                    alt={audio.id}
+                    onClick={() => handleShowAudio(audio)}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         {/* Modal audio */}
         <Modal

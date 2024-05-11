@@ -1,17 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 @layer base {
   body {
-    @apply bg-[#000000] text-white;
-  
-  };
-  .modal-content{
-    @apply bg-transparent
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), #00000080),url('/assets/bgImage.jpeg');
+
+    @apply  bg-no-repeat bg-fixed text-white  bg-cover bg-center;
+    
+}
+  .modal-content {
+    @apply bg-transparent;
   }
 }
-

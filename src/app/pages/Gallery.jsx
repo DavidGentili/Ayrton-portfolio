@@ -134,14 +134,14 @@ const Gallery = () => {
         <Modal
           show={showA}
           onHide={handleCloseA}
-          className="w-full text-white"
+          className=" text-white bg-black/80"
           size="lg"
         >
-          <Modal.Header className="w-full bg-black flex justify-end text-2xl">
+          <Modal.Header className="w-full  flex justify-end text-2xl">
             <GiCancel onClick={handleCloseA} />
           </Modal.Header>
 
-          <Modal.Body className=" bg-black ">
+          <Modal.Body className=" modal-content ">
             {selectedAudio && (
               <div className="flex justify-center items-center w-full flex-col md:flex-row md:h-full px-4 md:gap-24 ">
                 <div className=" flex  h-[300px] w-[255px]  md:h-[400px] md:w-[400px]   ">

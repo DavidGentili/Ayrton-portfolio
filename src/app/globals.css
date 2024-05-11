@@ -9,6 +9,9 @@
   body {
     @apply bg-[#000000] text-white;
   
+  };
+  .modal-content{
+    @apply bg-transparent
   }
 }
 

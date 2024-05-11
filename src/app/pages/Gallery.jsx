@@ -6,6 +6,7 @@ import AudioCard from "@/components/AudioCard";
 import { GiCancel } from "react-icons/gi";
 import Modal from "react-bootstrap/Modal";
 import Image from "next/image";
+import Spinner from "react-bootstrap/Spinner";
 const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
 
 const Gallery = () => {
@@ -15,6 +16,7 @@ const Gallery = () => {
   const [showA, setShowA] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [selectedAudio, setSelectedAudio] = useState(null);
+  const [isLoading,setIsLoading]= useState(true)
   const handleClose = () => setShow(false);
   const handleCloseA = () => setShowA(false);
   const handleShowVideo = (video) => {
@@ -27,6 +29,7 @@ const Gallery = () => {
   };
   useEffect(() => {
     const fetchGalleryData = async () => {
+      setIsLoading(false);
       try {
         const res = await fetch("/galleryData.json");
         const data = await res.json();
@@ -51,8 +54,10 @@ const Gallery = () => {
           Videos
         </div>
         <div className=" flex h-full w-full">
-          <div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
-            {dataVideos.map((video) => (
+         
+           
+          {isLoading?<div> <Spinner animation='border' role='status'/></div>  
+          :<div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">{dataVideos.map((video) => (
               <div key={video.id}>
                 <VideoCard
                   video={video.source}
@@ -60,21 +65,21 @@ const Gallery = () => {
                   onClick={() => handleShowVideo(video)}
                 />
               </div>
-            ))}
-          </div>
+            ))}</div>}
+          
         </div>
         {/* Modal video*/}
         <Modal
           show={show}
           onHide={handleClose}
-          className=" text-white"
+          className=" text-white bg-black/80"
           size="lg"
         >
-          <Modal.Header className="w-full bg-black flex justify-end text-2xl">
+          <Modal.Header className="flex justify-end">
             <GiCancel onClick={handleClose} />
           </Modal.Header>
 
-          <Modal.Body className=" bg-black md:w-full">
+          <Modal.Body className="  modal-content" >
             {selectedVideo && (
               <div className="flex justify-center items-center w-full flex-col md:flex-row md:h-full px-4 md:gap-24 ">
                 <video
@@ -100,7 +105,7 @@ const Gallery = () => {
           Audios
         </div>
         <div className=" flex h-full w-full">
-          <div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
+         {isLoading? <div> <Spinner animation='border' role='status'/></div>:<div className="grid grid-cols-2  md:w-full md:grid-cols-5 gap-4 ">
             {dataAudios.map((audio) => (
               <div key={audio.id}>
                 <AudioCard
@@ -111,7 +116,7 @@ const Gallery = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>}
         </div>
         {/* Modal audio */}
         <Modal

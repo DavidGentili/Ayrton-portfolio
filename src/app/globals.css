@@ -6,6 +6,7 @@
 @layer base {
   body {
     background-image:linear-gradient(rgba(0, 0, 0, 0.801), #00000080),url('/assets/bgImage.jpeg');
+  
 
     @apply  bg-no-repeat bg-fixed text-white  bg-cover bg-center;
     

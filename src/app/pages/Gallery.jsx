@@ -46,11 +46,11 @@ const Gallery = () => {
   return (
     <div id="gallery" className="flex h-full ">
       <div className="flex flex-col text-[#eca336]  w-full">
-        <div className="text-[#eca336] border-b-2 border-[#eca336]  md:w-96 text-3xl md:text-6xl md:py-10 md:mb-10 py-3">
+        <div className="text-[#eca336] border-b-2 border-[#eca336]  md:w-96 text-xl md:text-6xl md:py-10 md:mb-10 py-3">
           <div className={anton.className}>GALERIA</div>
         </div>
         {/* map Videos */}
-        <div className="my-4 bg-[#eca336]  text-black w-full p-2 text-xs md:text-2xl rounded-lg">
+        <div className="my-4 bg-[#eca336]  text-black w-full p-[10px] text-sm md:text-2xl rounded-lg">
           Videos
         </div>
         <div className=" flex h-full w-full">
@@ -106,7 +106,7 @@ const Gallery = () => {
         </Modal>
 
         {/* map Audios */}
-        <div className="my-4 bg-[#eca336]  text-black w-full p-2 text-xs md:text-2xl rounded-lg">
+        <div className="my-4 bg-[#eca336]  text-black w-full p-[10px] text-sm md:text-2xl rounded-lg">
           Audios
         </div>
         <div className=" flex h-full w-full">

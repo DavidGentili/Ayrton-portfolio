@@ -44,11 +44,11 @@ const Home = () => {
       {/* mobile design */}
       <div id="home" className="md:hidden h-full  flex ">
         <div className="flex flex-col w-full">
-          <div className="text-[#eca336] text-3xl font-bold  w-full">
+          <div className="text-[#eca336] text-xl font-bold  w-full">
             <h1 className={anton.className}> ¡SALUDOS Y BIENVENIDOS!</h1>
           </div>
 
-          <text className=" w-full  text-xl my-10 ">
+          <text className=" w-full  text-sm my-10 ">
             Soy Ayrton, un artista (cantante/ guitarrista) apasionado por la
             música. En esta web encontrarán algunos de mis trabajos, y conocerán
             un poco más de mi trayectoria. Toco varios generos musicales. Me

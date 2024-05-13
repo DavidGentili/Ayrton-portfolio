@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Anton } from "next/font/google";
 import VideoCard from "@/components/VideoCard";
 import AudioCard from "@/components/AudioCard";
-import { GiCancel } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 import Modal from "react-bootstrap/Modal";
 import Image from "next/image";
 import Spinner from "react-bootstrap/Spinner";
@@ -44,7 +44,7 @@ const Gallery = () => {
   }, [show]);
 
   return (
-    <div id="gallery" className="flex h-full ">
+    <div id="gallery" className="flex h-full mb-8 ">
       <div className="flex flex-col text-[#eca336]  w-full">
         <div className="text-[#eca336] border-b-2 border-[#eca336]  md:w-96 text-xl md:text-6xl md:py-10 md:mb-10 py-3">
           <div className={anton.className}>GALERIA</div>
@@ -80,8 +80,8 @@ const Gallery = () => {
           className=" text-white bg-black/80"
           size="lg"
         >
-          <Modal.Header className="flex justify-end">
-            <GiCancel onClick={handleClose} />
+          <Modal.Header className="flex justify-end border-[#eca336] text-[#eca336]">
+            <IoMdClose size={35} onClick={handleClose} />
           </Modal.Header>
 
           <Modal.Body className="  modal-content">
@@ -137,8 +137,8 @@ const Gallery = () => {
           className=" text-white bg-black/80"
           size="lg"
         >
-          <Modal.Header className="w-full  flex justify-end text-2xl">
-            <GiCancel onClick={handleCloseA} />
+          <Modal.Header className="w-full  flex justify-end text-2xl border-[#eca336] text-[#eca336]">
+            <IoMdClose size={35} onClick={handleCloseA} />
           </Modal.Header>
 
           <Modal.Body className=" modal-content ">

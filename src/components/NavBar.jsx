@@ -2,9 +2,10 @@
  import { Anton } from "next/font/google"
  import Link from "next/link"
   import { useState } from "react"
-  import { FaBars } from "react-icons/fa6";
+  import { LiaBarsSolid } from "react-icons/lia";
   
-  import { GiCancel } from "react-icons/gi";
+  import { IoMdClose } from "react-icons/io";
+  import { MdOutlineArrowForward } from "react-icons/md";
 
 const anton= Anton({weight: ["400"] , style: ["normal"] ,subsets:[ "latin"] })
 
@@ -13,9 +14,9 @@ const NavBar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <main className='text-[#eca336] border-b-2 border-[#eca336] flex  px-4 pb-4 mb-12 '>
+    <main className='text-[#eca336] border-b-2 border-[#eca336] flex   z-10  items-center bg-black/50 fixed bg-nav w-full'>
       {/* menu */}
-      <div className="hidden md:flex md:w-full ">
+      <div className="hidden md:flex md:w-full">
       <div className=' w-2/5 flex pl-8 font-bold text-4xl pt-8'>
 
             <div className={anton.className} >AYRTON SOSA</div>
@@ -37,27 +38,40 @@ const NavBar = () => {
          
         </div>
   {/* hambur */}
-<div className="md:hidden flex w-full justify-end pt-4">
+<div className="md:hidden flex w-full ">
 {!nav?(
-  <div  onClick={handleClick} >
-    <FaBars/>
+  <div className="flex w-full justify-between px-4 h-[114px] items-center"  >
+    <div className={`${anton.className} text-xl `} >AYRTON SOSA</div>
+   <div><LiaBarsSolid size={30} onClick={handleClick}/></div> 
    
   </div>
 ):(
-<div className="flex flex-col w-screen h-screen text-center">
-  <div  onClick={handleClick} className="flex w-full justify-end"><GiCancel /></div>
-  <div className="text-2xl gap-8 mt-14 flex flex-col">
-  <Link href='/#home' >
-        <div>Inicio</div>
+<div className="flex flex-col w-full h-screen  items-center ">
+  <div  className="flex w-full justify-between border-b-2 border-[#eca336] items-center px-4 h-[114px]">
+  <div className={`${anton.className} text-xl `} >AYRTON SOSA</div>
+   <div > <IoMdClose size={35}  onClick={handleClick}/></div> 
+
+   </div>
+  <div className="text-2xl   grid grid-rows-4  w-full pt-5"onClick={handleClick}>
+  <Link href='/#home' className="border-[#eca336] border-b-2 w-full  h-[114px]  ">
+        <div className="flex items-center h-full w-full justify-between px-4 ">Inicio
+        <MdOutlineArrowForward size={35}/></div>
+        
         </Link>
-        <Link href='/#about' >
-          <div>Sobre mi</div>
+        <Link href='/#about'  className="border-[#eca336] border-b-2 w-full  h-[114px] ">
+          <div className="flex items-center h-full w-full justify-between px-4 ">Sobre mi
+          <MdOutlineArrowForward size={35}/></div>
+          
           </Link>
-        <Link href='/#gallery' >
-        <div>Galería</div>
+        <Link href='/#gallery'  className="border-[#eca336] border-b-2 w-full  h-[114px] ">
+        <div className="flex items-center h-full w-full justify-between px-4">Galería
+        <MdOutlineArrowForward size={35}/></div>
+        
         </Link>
-        <Link href='/#contact' >
-       <div>Contacto</div> 
+        <Link href='/#contact'  className="border-[#eca336] border-b-2 w-full  h-[114px] ">
+       <div className="flex items-center h-full w-full justify-between px-4">Contacto
+       <MdOutlineArrowForward size={35}/></div>
+        
         </Link>
         </div>
 </div>)}

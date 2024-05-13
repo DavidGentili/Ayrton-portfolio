@@ -4,7 +4,7 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 @layer base {
-  body {
+  body,.bg-nav {
     background-image:linear-gradient(rgba(0, 0, 0, 0.801), #00000080),url('/assets/bgImage.jpeg');
   
 

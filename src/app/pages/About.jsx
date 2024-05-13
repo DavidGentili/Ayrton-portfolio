@@ -8,10 +8,10 @@ const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
 
 const About = () => {
   return (
-    <div>
+    <div id="about">
       {/* web design */}
-      <div id="about" className=" hidden h-full md:flex flex-col">
-        <div className="text-[#eca336] border-b-2 border-[#eca336]  w-96  text-6xl py-10 mb-16 ">
+      <div  className=" hidden h-full md:flex flex-col">
+        <div className="text-[#eca336] border-b-2 border-[#eca336]  w-96  text-6xl py-10 mb-16  ">
           <div className={anton.className}>SOBRE MI</div>
         </div>
         {/* --contenido */}

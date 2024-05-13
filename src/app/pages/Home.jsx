@@ -7,11 +7,11 @@ const anton = Anton({ weight: ["400"], style: ["normal"], subsets: ["latin"] });
 
 const Home = () => {
   return (
-    <div>
+    <div className="pt-40"id="home">
       {/* web design */}
       <div
-        id="home"
-        className="hidden h-full  md:flex mb-10 mt-28 md:justify-between"
+        
+        className="hidden h-full  md:flex mb-10  md:justify-between "
       >
         <div className="flex flex-col w-[600px] h-[619px] gap-10">
           <div className="text-[#eca336] text-6xl font-bold  p-3 w-50">

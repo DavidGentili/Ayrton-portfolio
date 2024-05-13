@@ -1,5 +1,5 @@
 import React from "react";
-import video1 from "../../../public/videos/video1.mp4";
+import video1 from "../videos/video1.mp4";
 import Link from "next/link";
 import { Anton } from "next/font/google";
 

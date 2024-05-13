@@ -36,7 +36,7 @@ const Home = () => {
         </div>
         <div className="flex  w-[480px]">
           <div className="rounded-2xl overflow-hidden">
-            <video controls autoPlay loop playsInline muted>
+            <video width="480" height="240" controls autoPlay loop playsInline muted>
               <source src={video1} type="video/mp4"/>
             </video>
             
@@ -60,7 +60,10 @@ const Home = () => {
             colección de música y ver vídeos de actuaciones en vivo.
           </text>
           <div className="rounded-2xl overflow-hidden ">
-            <video src={video1} controls autoPlay loop playsInline muted />
+          <video width="480" height="240" controls autoPlay loop playsInline muted>
+              <source src={video1} type="video/mp4"/>
+            </video>
+         
           </div>
 
           <Link

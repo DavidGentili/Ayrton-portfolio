@@ -8,19 +8,21 @@ const nextConfig = {
 
 export default nextConfig;
 
-export const webpack = (config) => {
-  config.module.rules.push({
-    test: /\.(png|jpe?g|gif|mp4)$/i,
-    use: [
-      {
-        loader: 'file-loader',
-        options: {
-          outputPath: 'static',
-          publicPath: '/_next/static',
+export const webpack = (config, { isServer }) => {
+  if (!isServer) {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|mp4)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'static',
+            publicPath: '/_next/static',
+          },
         },
-      },
-    ],
-  });
+      ],
+    });
+  }
 
   return config;
 };

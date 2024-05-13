@@ -16,22 +16,22 @@ const NavBar = () => {
   return (
     <main className='text-[#eca336] border-b-2 border-[#eca336] flex   z-10  items-center bg-black/50 fixed bg-nav w-full'>
       {/* menu */}
-      <div className="hidden md:flex md:w-full">
-      <div className=' w-2/5 flex pl-8 font-bold text-4xl pt-8'>
+      <div className="hidden md:flex w-full">
+      <div className='  flex items-center w-2/5 justify-center font-bold text-4xl  '>
 
             <div className={anton.className} >AYRTON SOSA</div>
       </div>
-        <div className='flex w-2/5 justify-between items-center text-center'>
-        <Link href='/#home' className="hover:text-black hover:bg-[#eca336] h-full px-4 pb-4 pt-8 w-full rounded-b-2xl ">
+        <div className='flex w-full gap-10 px-5 justify-end items-center text-center text-2xl mb-2 '>
+        <Link href='/#home' className="hover:text-black hover:bg-[#eca336] px-5 h-full pb-4 pt-8  rounded-b-[50px] ">
         <div>Inicio</div>
         </Link>
-        <Link href='/#about' className="hover:text-black hover:bg-[#eca336] h-full px-4 pb-4 pt-8 w-full rounded-b-2xl ">
+        <Link href='/#about' className="hover:text-black hover:bg-[#eca336] px-5 h-full pb-4 pt-8  rounded-b-[50px] ">
           <div>Sobre mi</div>
           </Link>
-        <Link href='/#gallery' className="hover:text-black hover:bg-[#eca336] h-full px-4 pb-4 pt-8 w-full rounded-b-2xl ">
+        <Link href='/#gallery' className="hover:text-black hover:bg-[#eca336] px-5 h-full pb-4 pt-8  rounded-b-[50px] ">
         <div>Galería</div>
         </Link>
-        <Link href='/#contact' className="hover:text-black hover:bg-[#eca336] h-full px-4 pb-4 pt-8 w-full rounded-b-2xl ">
+        <Link href='/#contact' className="hover:text-black hover:bg-[#eca336] px-5 h-full pb-4 pt-8  rounded-b-[50px] ">
        <div>Contacto</div>
         </Link>
         </div>

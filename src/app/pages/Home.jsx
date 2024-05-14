@@ -37,7 +37,7 @@ const Home = () => {
         <div className="flex  w-[480px]">
           <div className="rounded-2xl overflow-hidden">
             <video width="480" height="240" controls autoPlay loop playsInline muted>
-              <source src={video1} type="video/mp4"/>
+              <source src={video1.src} type="video/mp4"/>
             </video>
             
           </div>
